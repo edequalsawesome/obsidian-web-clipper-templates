@@ -1,0 +1,48 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "a8c P2",
+	"behavior": "create",
+	"noteContentFormat": "# {{title}}\n\ntldr:: {{\"a two sentence summary of the page written in a casual style\"}}\n\n{{content}}",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "source",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{author|split:\\\", \\\"|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "publishedDate",
+			"value": "{{published}}",
+			"type": "date"
+		},
+		{
+			"name": "created",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "clippings a8c",
+			"type": "multitext"
+		}
+	],
+	"triggers": [
+		"wordpress.com"
+	],
+	"noteNameFormat": "{{date|date:\"YYYY-MM-DD\"}} - {{title}}",
+	"path": "Clippings"
+}

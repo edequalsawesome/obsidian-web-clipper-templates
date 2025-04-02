@@ -1,0 +1,54 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "YouTube AI",
+	"behavior": "create",
+	"noteContentFormat": "# {{schema:@VideoObject:author}} - {{schema:@VideoObject:name|safe_name|replace:\\\"\\\\#\\\":\\\"\\\",\\\"\\\\!\\\":\\\"\\\"|trim}}\n\n![{{schema:name}}]({{url|replace:\"watch?v=\":\"embed/\"}})\n\n{{\"Summarize the main points. Don't leave out anything. Bold the important parts, if any.\"|callout:(\"summary\",\"Summary\",true)}}\n\n{{selectorHtml:#description-inline-expander|remove_html:(\"#structured-description, #snippet, tp-yt-paper-button\")|strip_tags|replace:\"\\#\":\"\\#\"|callout:(\"summary\",\"Description\",true)}}\n\n{{selectorHtml:ytd-engagement-panel-section-list-renderer[visibility$=\\\"EXPANDED\\\"] #segments-container|strip_tags:\"h2,ytd-transcript-segment-renderer\"|replace:\"ytd-transcript-segment-renderer\":\"li\"|markdown|callout:(\"summary\",\"Transcript\",true))}}\n\n",
+	"properties": [
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DD  HH:mm:ss (Z)\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "source",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "title",
+			"value": "{{schema:@VideoObject:name}}",
+			"type": "text"
+		},
+		{
+			"name": "channel",
+			"value": "{{schema:@VideoObject:author}}",
+			"type": "text"
+		},
+		{
+			"name": "publishedDate",
+			"value": "{{schema:@VideoObject:uploadDate|date:\\\"YYYY-MM-DD\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "thumbnailURL",
+			"value": "{{schema:@VideoObject:thumbnailUrl|first}}",
+			"type": "text"
+		},
+		{
+			"name": "videoDuration",
+			"value": "{{selector:ytd-player .ytp-time-duration|split:\\\":\\\"|slice:-3,-2|replace:\\\"[]\\\":\\\"0\\\"}}h {{selector:ytd-player .ytp-time-duration|split:\\\":\\\"|slice:-2,-1}}m {{selector:ytd-player .ytp-time-duration|split:\\\":\\\"|slice:-1}}s",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "clippings YouTube watchLater",
+			"type": "multitext"
+		}
+	],
+	"triggers": [
+		"https://www.youtube.com/watch?v="
+	],
+	"noteNameFormat": "{{date|date:YYYY-MM-DD}}  - {{title|safe_name}}",
+	"path": "Clippings/YouTube",
+	"context": "{{selectorHtml:ytd-engagement-panel-section-list-renderer[visibility$=\\\"EXPANDED\\\"] #segments-container|strip_tags:\"h2,ytd-transcript-segment-renderer\"|replace:\"ytd-transcript-segment-renderer\":\"li\"|markdown|callout:(\"summary\",\"Transcript\",true))}}\n"
+}
