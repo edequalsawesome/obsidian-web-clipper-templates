@@ -2,7 +2,7 @@
 	"schemaVersion": "0.1.0",
 	"name": "a8c P2",
 	"behavior": "create",
-	"noteContentFormat": "# {{title}}\n\ntldr:: {{\"a two sentence summary of the page written in a casual style\"}}\n\n{{content}}",
+	"noteContentFormat": "# {{title}}\n\ntldr:: {{\"Summarize this P2 post content in exactly 2 sentences, focusing on the main points and actionable insights\"}}\n\n---\n\n{{selectorHtml:.entry-content|remove_html:('nav,.o2-post-footer-actions,.sharedaddy,.intralinks,.entry-meta,template,.p2-glossary-item__content')|strip_attr:('class,id,style,data-*,aria-*')|markdown}}",
 	"properties": [
 		{
 			"name": "title",
@@ -16,13 +16,8 @@
 		},
 		{
 			"name": "author",
-			"value": "{{author|split:\\\", \\\"|wikilink|join}}",
+			"value": "{{selector:.entry-author|trim}}",
 			"type": "multitext"
-		},
-		{
-			"name": "publishedDate",
-			"value": "{{published}}",
-			"type": "date"
 		},
 		{
 			"name": "created",
@@ -30,13 +25,8 @@
 			"type": "date"
 		},
 		{
-			"name": "description",
-			"value": "{{description}}",
-			"type": "text"
-		},
-		{
 			"name": "tags",
-			"value": "clippings a8c",
+			"value": "clippings a8c p2",
 			"type": "multitext"
 		}
 	],
@@ -44,5 +34,6 @@
 		"wordpress.com"
 	],
 	"noteNameFormat": "{{date|date:\"YYYY-MM-DD\"}} - {{title}}",
-	"path": "Clippings"
+	"path": "Clippings",
+	"context": "{{selectorHtml:.entry-content|remove_html:('nav,.o2-post-footer-actions,.sharedaddy,.intralinks,.entry-meta,template,.p2-glossary-item__content')|strip_attr:('class,id,style,data-*,aria-*')|markdown}}"
 }
