@@ -10,3 +10,6 @@ nova.json
 .Trashes
 ehthumbs.db
 Thumbs.db 
+
+# Other unnecessary files
+*.db

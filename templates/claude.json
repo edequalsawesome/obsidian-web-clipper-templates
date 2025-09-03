@@ -1,0 +1,49 @@
+{
+	"schemaVersion": "0.1.0",
+    "name": "Claude",
+	"behavior": "create",
+    "noteContentFormat": "{{selectorHtml:main}}\n{{\"Return the chat transcript in strict chronological order, as clean Markdown. For each user message prefix a line with '### You:' and for each assistant message prefix '### Claude:'. Preserve Markdown formatting, code blocks, math, tables and links exactly as shown in the chat. Ignore all UI elements (sidebars, buttons, inputs, menus) and omit any system notices or tool output metadata. Output only the transcript.\"}}\n",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "source",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{author|split:\\\", \\\"|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "published",
+			"value": "{{published}}",
+			"type": "date"
+		},
+		{
+			"name": "created",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+            "value": "claude/conversation",
+            "type": "multitext"
+        }
+    ],
+    "triggers": [
+        "https://claude.ai/chat",
+        "/^https:\\/\\/claude\\.ai\\/(chat|project)\\/.+$/"
+    ],
+    "noteNameFormat": "{{title}}",
+    "path": "Clippings"
+}
