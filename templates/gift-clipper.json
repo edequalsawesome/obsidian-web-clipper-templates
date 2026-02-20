@@ -1,0 +1,51 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Gift",
+	"behavior": "create",
+	"noteContentFormat": "# {{title}}\n\n{{\"You are a savvy assistant -- give a brief 3-5 sentence overview of the content of the page like an executive recap, and any pertinent details, like shipping time and cost\"}}",
+	"properties": [
+		{
+			"name": "type",
+			"value": "giftItem",
+			"type": "text"
+		},
+		{
+			"name": "date",
+			"value": "{{date|date:\\\"YYYY-MM-DD\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "tldr",
+			"value": "{{\\\"You are a savvy assistant -- give a brief 3-5 sentence overview of the content of the page like an executive recap\\\"}}",
+			"type": "text"
+		},
+		{
+			"name": "giftFor",
+			"value": "",
+			"type": "text"
+		},
+		{
+			"name": "giftEvent",
+			"value": "",
+			"type": "multitext"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "purchased",
+			"value": "",
+			"type": "checkbox"
+		},
+		{
+			"name": "tags",
+			"value": "eT3/gifts",
+			"type": "multitext"
+		}
+	],
+	"triggers": [],
+	"noteNameFormat": "{{date|date:\"YYYY-MM-DD\"}} - Gifts - {{title}}",
+	"path": ""
+}

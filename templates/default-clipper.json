@@ -2,8 +2,13 @@
 	"schemaVersion": "0.1.0",
 	"name": "Default",
 	"behavior": "create",
-	"noteContentFormat": "# {{title}}\ntldr:: {{\"You are a savvy assistant -- give a brief 3-5 sentence overview of the content of the page like an executive recap\"}}\n\n---\n\n{{content}}",
+	"noteContentFormat": "# {{title}}\n\n{{content}}",
 	"properties": [
+		{
+			"name": "type",
+			"value": "clippings",
+			"type": "text"
+		},
 		{
 			"name": "title",
 			"value": "{{title}}",
@@ -32,6 +37,11 @@
 		{
 			"name": "description",
 			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "tldr",
+			"value": "{{\\\"You are a savvy assistant -- give a brief 3-5 sentence overview of the content of the page like an executive recap\\\"}}",
 			"type": "text"
 		},
 		{

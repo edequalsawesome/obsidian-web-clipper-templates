@@ -41,7 +41,7 @@
 		},
 		{
 			"name": "type",
-			"value": "Clippings",
+			"value": "clippings",
 			"type": "text"
 		}
 	],

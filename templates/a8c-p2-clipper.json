@@ -2,8 +2,13 @@
 	"schemaVersion": "0.1.0",
 	"name": "a8c P2",
 	"behavior": "create",
-	"noteContentFormat": "# {{title}}\n\ntldr:: {{\"Summarize this P2 post content in exactly 2 sentences, focusing on the main points and actionable insights\"}}\n\n---\n\n{{selectorHtml:.entry-content|remove_html:('nav,.o2-post-footer-actions,.sharedaddy,.intralinks,.entry-meta,template,.p2-glossary-item__content')|strip_attr:('class,id,style,data-*,aria-*')|markdown}}",
+	"noteContentFormat": "# {{title}}\n\n{{selectorHtml:.entry-content|remove_html:('nav,.o2-post-footer-actions,.sharedaddy,.intralinks,.entry-meta,template,.p2-glossary-item__content')|strip_attr:('class,id,style,data-*,aria-*')|markdown}}",
 	"properties": [
+		{
+			"name": "type",
+			"value": "clippings",
+			"type": "text"
+		},
 		{
 			"name": "title",
 			"value": "{{title}}",
@@ -26,14 +31,19 @@
 		},
 		{
 			"name": "tags",
-			"value": "clippings a8c p2",
+			"value": "a8c, clippings",
 			"type": "multitext"
+		},
+		{
+			"name": "tldr",
+			"value": "{{\\\"You are a savvy assistant -- give a brief 3-5 sentence overview of the content of the page like an executive recap\\\"}}",
+			"type": "text"
 		}
 	],
 	"triggers": [
-		"wordpress.com"
+		"^https:\\/\\/(.+)\\.wordpress\\.com\\/[12]\\d{3}\\/\\d{2}\\/\\d{2}\\/(.+)$"
 	],
 	"noteNameFormat": "{{date|date:\"YYYY-MM-DD\"}} - {{title}}",
-	"path": "Clippings",
+	"path": "@a8c/Clippings",
 	"context": "{{selectorHtml:.entry-content|remove_html:('nav,.o2-post-footer-actions,.sharedaddy,.intralinks,.entry-meta,template,.p2-glossary-item__content')|strip_attr:('class,id,style,data-*,aria-*')|markdown}}"
 }

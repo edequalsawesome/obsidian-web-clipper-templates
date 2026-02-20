@@ -2,7 +2,7 @@
 	"schemaVersion": "0.1.0",
 	"name": "Default (No AI)",
 	"behavior": "create",
-	"noteContentFormat": "# {{title}}\ntldr:: \n\n---\n\n{{content}}",
+	"noteContentFormat": "# {{title}}\n\n{{content}}",
 	"properties": [
 		{
 			"name": "title",
@@ -38,6 +38,16 @@
 			"name": "tags",
 			"value": "clippings",
 			"type": "multitext"
+		},
+		{
+			"name": "type",
+			"value": "clippings",
+			"type": "text"
+		},
+		{
+			"name": "tldr",
+			"value": "",
+			"type": "text"
 		}
 	],
 	"triggers": [],
