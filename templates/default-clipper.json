@@ -30,7 +30,7 @@
 			"type": "date"
 		},
 		{
-			"name": "created",
+			"name": "clipped",
 			"value": "{{date}}",
 			"type": "date"
 		},

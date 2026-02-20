@@ -10,7 +10,7 @@
 			"type": "text"
 		},
 		{
-			"name": "date",
+			"name": "clipped",
 			"value": "{{date|date:\\\"YYYY-MM-DD\\\"}}",
 			"type": "date"
 		},

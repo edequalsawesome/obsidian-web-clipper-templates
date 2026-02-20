@@ -26,7 +26,7 @@
 		}
 	],
 	"triggers": [
-		"/^https:\\/\\/(.+)\\.wordpress.com\\/([12]\\d{3}\\/(0[1-9]|1[0-2])\\/(0[1-9]|[12]\\d|3[01]))\\/fusion-weekly-update-(.+)"
+		"/^https:\\/\\/(.+)\\.wordpress\\.com\\/([12]\\d{3}\\/(0[1-9]|1[0-2])\\/(0[1-9]|[12]\\d|3[01]))\\/fusion-weekly-update-(.+)$/"
 	],
 	"noteNameFormat": "{{published|date:\"YYYY-MM-DD\"|date_modify:\"-4 days\"}} - {{published|date:\"YYYY-MM-DD\"|date_modify:\"+2 days\"}}",
 	"path": "@a8c/Fusion/Weekly Updates/Unprocessed",
