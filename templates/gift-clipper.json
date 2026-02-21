@@ -16,7 +16,7 @@
 		},
 		{
 			"name": "tldr",
-			"value": "{{\\\"You are a savvy assistant -- give a brief 3-5 sentence overview of the content of the page like an executive recap\\\"}}",
+			"value": "{{\\\"You are a savvy assistant -- give a brief 2-3 sentence overview of the content of the page like an executive recap\\\"}}",
 			"type": "text"
 		},
 		{
